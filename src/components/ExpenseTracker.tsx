@@ -34,7 +34,20 @@ export default class ExpenseTracker extends Component<Props, State>{
         }
         const data = await pushDataFromUser(finalData);
         // console.log(data)
-        this.props.onTrue()
+        this.props.onTrue();
+        //on submitting rteh form clear the filed values
+        this.setState({
+            payeeName: ''
+          });
+          this.setState({
+            product: ''
+          });
+          this.setState({
+            price: 0
+          });
+          this.setState({
+            setDate: ''
+          });
     }
 
     setProduct = (event: ChangeEvent<HTMLInputElement>) => {
